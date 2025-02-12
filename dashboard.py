@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import plotly.express as px
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 
@@ -11,6 +12,8 @@ st.title("📊 AI-Powered Media Monitoring Dashboard")
 st.subheader("📍 Mentions by Tourist Destination")
 destinations = ["Quintana Roo", "Cancún", "Riviera Nayarit", "Tulum", "Los Cabos"]
 mentions = np.random.randint(500, 1500, size=len(destinations))
+
+# ✅ FIX: Create DataFrame BEFORE using it
 df_mentions = pd.DataFrame({"Destination": destinations, "Mentions": mentions})
 
 # Create a bar chart
